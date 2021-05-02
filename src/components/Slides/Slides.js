@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useCallback, useState} from 'react';
 import Slide from "./Slide";
 import styles from './slides.module.css'
 import NavigationButtons from "./NavigationButtons";
@@ -17,6 +17,31 @@ const Slides = ({data, indicatorDots, color}) => {
     const [distance, setDistance] = useState(0);
     const lastSlideIndex = data.length - 1;
 
+    const moveToPrevious = useCallback(()=>  {
+        setSlideIndex(slideIndex > 0 ? slideIndex - 1 : slideIndex)
+        setMoveX(slideIndex > 0 ? moveX + MOVE_DISTANCE_PERCENTAGE : 0)
+    }, [setSlideIndex, setMoveX, slideIndex, moveX])
+
+    const moveToNext = useCallback(()=> {
+        setSlideIndex(slideIndex < lastSlideIndex ? slideIndex + 1 : slideIndex)
+        setMoveX(slideIndex < lastSlideIndex ? moveX - MOVE_DISTANCE_PERCENTAGE : moveX)
+    },[setSlideIndex, setMoveX, slideIndex, lastSlideIndex, moveX])
+    
+    useEffect(()=>{
+        window.onkeydown = (event)=>{
+            switch (event.code){
+                case "ArrowRight":
+                    moveToNext();
+                    break;
+                case "ArrowLeft":
+                    moveToPrevious();
+                    break;
+                default:
+                    break;
+            }
+        }
+    },[moveToPrevious, moveToNext])
+    
     function handleSwipeStart(event) {
         setMouseDown(true)
         setStartX(event.clientX ? event.clientX : event.targetTouches[0].clientX)
@@ -48,17 +73,7 @@ const Slides = ({data, indicatorDots, color}) => {
             }
         }
     }
-
-    function moveToPrevious() {
-        setSlideIndex(slideIndex > 0 ? slideIndex - 1 : slideIndex)
-        setMoveX(slideIndex > 0 ? moveX + MOVE_DISTANCE_PERCENTAGE : 0)
-    }
-
-    function moveToNext() {
-        setSlideIndex(slideIndex < lastSlideIndex ? slideIndex + 1 : slideIndex)
-        setMoveX(slideIndex < lastSlideIndex ? moveX - MOVE_DISTANCE_PERCENTAGE : moveX)
-    }
-
+    
     function getColor(isActive) {
         return isActive ? color : '#f0f0f0'
     }

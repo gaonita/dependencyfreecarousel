@@ -1,7 +1,7 @@
 # Dependency-Free Carousel
 
 This is a carousel React component built without any additional carousel library.\
-It supports swipe motion(mouse, touch), responsive images, indicator dots, navigation buttons and color customization.
+It supports swipe motion(mouse, touch), responsive images, indicator dots, navigation buttons, color customization and navigation using keyboard.
 
 ### Goal 1. Render slides with data size handling
 - It maps out each element from the data object into a slides roll, and it shows one slide at a time in the viewport. 
@@ -13,7 +13,10 @@ These handlers take care of the mouse events and also the touch events on mobile
 
 - When the dragged distance from swiping is meaningful(`DRAG_THRESHOLD`), it triggers the slides roll to move to the next, or the previous slide to show.
 
-### Goal 3. Optional Customization
+### Goal 3. Make it accessible; Support navigation by keyboard
+- It supports to use keyboard to navigate between carousel items(according to [Web Accessibility Tutorials](https://www.w3.org/WAI/tutorials/carousels/)).
+
+### Goal 4. Optional Customization
 - You can choose whether you show indicator dots or not by setting `indicatorDots` prop.
 - You can choose whether you show navigation buttons or not by setting `navigationButtons` prop.
 - You can set the color of navigation arrows and marked dot by setting  `color` prop to any color.
