@@ -1,7 +1,9 @@
-# Dependency-Free Carousel
+# Dependency-Free Carousel 🎠
 
 This is a carousel React component built without any additional carousel library.\
 It supports swipe motion(mouse, touch), responsive images, indicator dots, navigation buttons, color customization and navigation using keyboard.
+
+### 🔗   [Demo here](https://dependencyfreecarousel.netlify.app/) 
 
 ### Goal 1. Render slides with data size handling
 - It maps out each element from the data object into a slides roll, and it shows one slide at a time in the viewport. 
