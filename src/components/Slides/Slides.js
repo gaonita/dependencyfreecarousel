@@ -9,7 +9,7 @@ const MOVE_DISTANCE_PERCENTAGE = 100;
 const MIN_DATA_SIZE = 3;
 const MAX_DATA_SIZE = 6;
 
-const Slides = ({data, indicatorDots, color}) => {
+const Slides = ({data, indicatorDots, navigationButtons, color}) => {
     const [slideIndex, setSlideIndex] = useState(0);
     const [mouseDown, setMouseDown] = useState(false);
     const [startX, setStartX] = useState(0);
@@ -97,12 +97,15 @@ const Slides = ({data, indicatorDots, color}) => {
                             />
                         )}
                     </div>
-                    <NavigationButtons slideIndex={slideIndex}
-                                       lastSlideIndex={lastSlideIndex}
-                                       moveToNext={moveToNext}
-                                       moveToPrevious={moveToPrevious}
-                                       getColor={getColor}
-                    />
+                    {
+                        navigationButtons &&
+                        <NavigationButtons slideIndex={slideIndex}
+                                           lastSlideIndex={lastSlideIndex}
+                                           moveToNext={moveToNext}
+                                           moveToPrevious={moveToPrevious}
+                                           getColor={getColor}
+                        />
+                    }
                 </div>
                 {
                     indicatorDots &&

@@ -6,6 +6,7 @@ const SlidesContainer = ({data, size}) => {
         <div style={{width:`${size}%`}}>
             <Slides data={data}
                     indicatorDots={true}
+                    navigationButtons={true}
                     color={'#6C0056'}/>
         </div>
     );
