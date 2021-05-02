@@ -1,0 +1,59 @@
+.slidesContainer {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    cursor: grab;
+
+    /*touch-action auto allows the browser to handle all pan and zoom interactions.*/
+    touch-action: auto;
+}
+
+.slidesContainer.cursorGrabbing {
+    cursor: grabbing; 
+}
+
+.slides {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    transition: transform 1s;
+    width: 100%;
+}
+
+.slideContainer {
+    display: flex;
+    position: relative;
+}
+
+.navigateButtonContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+}
+
+.navigateButton {
+    border:none;
+    margin: 0;
+    padding: 0;
+    background:transparent;
+}
+
+.dotsContainer {
+    display: flex;
+    align-items:center;
+    justify-content: center; 
+    margin: 16px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50px;
+    margin: 4px;
+}
