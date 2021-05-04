@@ -40,6 +40,7 @@ const Slides = ({data, indicatorDots, navigationButtons, color}) => {
                     break;
             }
         }
+        return(()=>{window.onkeydown = null})
     },[moveToPrevious, moveToNext])
     
     function handleSwipeStart(event) {
