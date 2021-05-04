@@ -1,11 +1,11 @@
 import React from 'react';
 import Slides from "../Slides";
-import styles from "./slideContainer.module.css"
+import styles from "./carouselContainer.module.css"
 
-const SlidesContainer = ({data, size}) => {
+const CarouselContainer = ({data, size}) => {
     return (
         <div style={{width:`${size}%`}}
-             className={styles.slidesContainer}
+             className={styles.carouselContainer}
         >
             <Slides data={data}
                     indicatorDots={true}
@@ -15,4 +15,4 @@ const SlidesContainer = ({data, size}) => {
     );
 };
 
-export default SlidesContainer;
+export default CarouselContainer;

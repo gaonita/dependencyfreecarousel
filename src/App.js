@@ -8,7 +8,7 @@ import remote from './assets/RemoteMeeting.png'
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import SlidesContainer from "./components/SlidesContainer";
+import CarouselContainer from "./components/CarouselContainer";
 
 const exampleContentData = [
     {
@@ -42,8 +42,8 @@ function App() {
     return (
         <div className="App">
             <Header />
-            <SlidesContainer data={exampleContentData}
-                             size={80}
+            <CarouselContainer data={exampleContentData}
+                               size={80}
             />
            <Footer />
         </div>
