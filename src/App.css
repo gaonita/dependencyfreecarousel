@@ -16,12 +16,12 @@ header {
 .headerText {
   font-size: 1.6rem;
   font-weight: bold;
-  color: #6C0056;
+  color: #0154b8;
 }
 
 footer {
   width: 100%;
-  background-color: #6C0056;
+  background-color: #0154b8;
   height: 4rem;
   display: flex;
   align-items: center;
