@@ -10,7 +10,7 @@ const CarouselContainer = ({data, size}) => {
             <Slides data={data}
                     indicatorDots={true}
                     navigationButtons={true}
-                    color={'#6C0056'}/>
+                    color={'#0154b8'}/>
         </div>
     );
 };
